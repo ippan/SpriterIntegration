@@ -1,0 +1,36 @@
+{"frames": {
+
+"bat/body.png":
+{
+	"frame": {"x":2,"y":2,"w":64,"h":83},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":58,"y":9,"w":64,"h":83},
+	"sourceSize": {"w":180,"h":102}
+},
+"bat/wing_left.png":
+{
+	"frame": {"x":68,"y":2,"w":134,"h":49},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":15,"y":37,"w":134,"h":49},
+	"sourceSize": {"w":180,"h":102}
+},
+"bat/wing_right.png":
+{
+	"frame": {"x":68,"y":53,"w":134,"h":49},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":34,"y":36,"w":134,"h":49},
+	"sourceSize": {"w":180,"h":102}
+}},
+"meta": {
+	"app": "http://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "bat.png",
+	"format": "RGBA8888",
+	"size": {"w":204,"h":104},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:644825ac37aa1591047e54ad54c5e78f:acf224ad1ebd558a1646bdadf4546dca:7701fa4d77073f039a4bfcba279ca81e$"
+}
+}

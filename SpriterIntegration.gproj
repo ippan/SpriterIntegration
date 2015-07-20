@@ -1,0 +1,13 @@
+<project>
+ <properties encryptCode="0" fps="60" mouseTouchOrder="0" logicalWidth="320" mouseToTouch="1" win_domain="giderosmobile.com" windowHeight="0" retinaDisplay="0" architecture="0" scaleMode="0" iosDevice="0" osx_domain="giderosmobile.com" touchToMouse="1" orientation="0" packageName="com.yourdomain.yourapp" assetsOnly="0" autorotation="0" logicalHeight="480" win_org="GiderosMobile" encryptAssets="0" osx_org="GiderosMobile" windowWidth="0" android_template="0">
+  <imageScales/>
+ </properties>
+ <file source="Spriter.lua"/>
+ <file source="main.lua"/>
+ <folder name="data">
+  <file source="data/bat.scon"/>
+  <file source="data/bat.png"/>
+  <file source="data/bat.json"/>
+ </folder>
+ <dependency from="main.lua" to="Spriter.lua"/>
+</project>

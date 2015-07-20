@@ -1,0 +1,192 @@
+{
+	"entity": [
+		{
+			"animation": [
+				{
+					"gline": [],
+					"id": 0,
+					"interval": 100,
+					"length": 1000,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "1",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 0,
+										"timeline": "2",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "2"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "1",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 1,
+										"timeline": "2",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "2"
+									}
+								],
+								"time": 500
+							}
+						]
+					},
+					"name": "idle",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"file": 0,
+										"folder": 0,
+										"x": 1,
+										"y": 1
+									},
+									"spin": 0
+								},
+								{
+									"id": 1,
+									"object": {
+										"file": 0,
+										"folder": 0,
+										"x": 1,
+										"y": -19
+									},
+									"spin": 0,
+									"time": 500
+								}
+							],
+							"name": "body"
+						},
+						{
+							"id": 1,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"file": 1,
+										"folder": 0,
+										"x": -25,
+										"y": 14
+									},
+									"spin": -1
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 330,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.6,
+										"x": -21,
+										"y": -4.999999999999993
+									},
+									"time": 500
+								}
+							],
+							"name": "wing_left"
+						},
+						{
+							"id": 2,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"file": 2,
+										"folder": 0,
+										"x": 23,
+										"y": 14
+									}
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 30,
+										"file": 2,
+										"folder": 0,
+										"scale_x": 1.6,
+										"x": 17.999999999999993,
+										"y": -9
+									},
+									"spin": -1,
+									"time": 500
+								}
+							],
+							"name": "wing_right"
+						}
+					]
+				}
+			],
+			"character_map": [],
+			"id": 0,
+			"name": "bat",
+			"obj_info": []
+		}
+	],
+	"folder": [
+		{
+			"file": [
+				{
+					"height": 102,
+					"id": 0,
+					"name": "bat/body.png",
+					"pivot_x": 0.5,
+					"pivot_y": 0.401961,
+					"width": 180
+				},
+				{
+					"height": 102,
+					"id": 1,
+					"name": "bat/wing_left.png",
+					"pivot_x": 0.4,
+					"pivot_y": 0.4,
+					"width": 180
+				},
+				{
+					"height": 102,
+					"id": 2,
+					"name": "bat/wing_right.png",
+					"pivot_x": 0.6,
+					"pivot_y": 0.4,
+					"width": 180
+				}
+			],
+			"id": 0,
+			"name": "bat"
+		}
+	],
+	"generator": "BrashMonkey Spriter",
+	"generator_version": "r4.1",
+	"scon_version": "1.0"
+}
