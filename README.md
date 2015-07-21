@@ -6,6 +6,7 @@ a single file script to load [Spriter](http://www.brashmonkey.com) animations to
 
 * load Spriter texture pack
 * load Spriter scon file
+* play object animation
 
 ## Install
 
@@ -13,7 +14,15 @@ a single file script to load [Spriter](http://www.brashmonkey.com) animations to
 
 ## Example
 
-   local sprite = Spriter.create("data/bat.scon")
+    local texture = Texture.new("data/bat.png")
+
+    local texture_pack = Spriter.TexturePack.new(texture, "data/bat.json")
+    spriter_object = Spriter.create("data/bat.scon")
+
+    local sprite = spriter_object:createEntitySprite("bat")
+    sprite.texture_pack = texture_pack
+ 
+    stage:addChild(sprite)
 
 ## Notes
 images in this repository come form my game call [BaBaBear Boom](https://itunes.apple.com/app/bababear-boom/id702178407)
