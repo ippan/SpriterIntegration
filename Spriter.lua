@@ -119,8 +119,24 @@ function Spriter.EntitySprite:init(entity, folders)
 	self.animation = entity.animations[1]
 	self.bitmaps = {}
 	self.folders = folders
+	self.playing = false
 	
 	self:addEventListener(Event.ENTER_FRAME, Spriter.EntitySprite.onUpdate, self)
+end
+
+function Spriter.EntitySprite:play(name)
+	self.animation = self.entity.animations[name]
+	self.time = 0
+	self.playing = true
+end
+
+function Spriter.EntitySprite:pause()
+	self.playing = not self.playing
+end
+
+function Spriter.EntitySprite:stop()
+	self.playing = false
+	self.time = 0
 end
 
 function Spriter.EntitySprite:setTime(time)
@@ -134,7 +150,9 @@ function Spriter.EntitySprite:setTime(time)
 end
 
 function Spriter.EntitySprite:onUpdate(event)
-	self:setTime(self.time + event.deltaTime * 1000.0)	
+	if self.playing then
+		self:setTime(self.time + event.deltaTime * 1000.0)	
+	end
 	
 	if self.texture_pack == nil then return end
 	
@@ -231,6 +249,7 @@ function Spriter.Entity:init(entity_data)
 	local animations = {}
 	for i, animation in ipairs(entity_data.animation) do
 		animations[animation.id + 1] = Spriter.Animation.new(animation)
+		animations[animation.name] = animations[animation.id + 1]
 	end
 	self.animations = animations
 		

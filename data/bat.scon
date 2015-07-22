@@ -68,6 +68,7 @@
 								{
 									"id": 0,
 									"object": {
+										"angle": 0,
 										"file": 0,
 										"folder": 0,
 										"x": 1,
@@ -78,6 +79,7 @@
 								{
 									"id": 1,
 									"object": {
+										"angle": 0,
 										"file": 0,
 										"folder": 0,
 										"x": 1,
@@ -95,6 +97,7 @@
 								{
 									"id": 0,
 									"object": {
+										"angle": 0,
 										"file": 1,
 										"folder": 0,
 										"x": -25,
@@ -110,7 +113,7 @@
 										"folder": 0,
 										"scale_x": 1.6,
 										"x": -21,
-										"y": -4.999999999999993
+										"y": -4.99999999999999
 									},
 									"time": 500
 								}
@@ -123,6 +126,7 @@
 								{
 									"id": 0,
 									"object": {
+										"angle": 0,
 										"file": 2,
 										"folder": 0,
 										"x": 23,
@@ -136,11 +140,225 @@
 										"file": 2,
 										"folder": 0,
 										"scale_x": 1.6,
-										"x": 17.999999999999993,
+										"x": 18,
 										"y": -9
 									},
 									"spin": -1,
 									"time": 500
+								}
+							],
+							"name": "wing_right"
+						}
+					]
+				},
+				{
+					"gline": [],
+					"id": 1,
+					"interval": 100,
+					"length": 1000,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [],
+								"id": 0,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": "1",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 0,
+										"timeline": "2",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 0,
+										"timeline": "0",
+										"z_index": "2"
+									}
+								]
+							},
+							{
+								"bone_ref": [],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": "1",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 1,
+										"timeline": "2",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 1,
+										"timeline": "0",
+										"z_index": "2"
+									}
+								],
+								"time": 250
+							},
+							{
+								"bone_ref": [],
+								"id": 2,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 2,
+										"timeline": "1",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 2,
+										"timeline": "2",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 2,
+										"timeline": "0",
+										"z_index": "2"
+									}
+								],
+								"time": 750
+							}
+						]
+					},
+					"name": "fly",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 0,
+										"file": 0,
+										"folder": 0,
+										"x": 1,
+										"y": 1
+									},
+									"spin": 0
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 0,
+										"file": 0,
+										"folder": 0,
+										"x": 2.0000000000000036,
+										"y": 30.999999999999996
+									},
+									"spin": 0,
+									"time": 250
+								},
+								{
+									"id": 2,
+									"object": {
+										"angle": 0,
+										"file": 0,
+										"folder": 0,
+										"x": 0.3333333333333339,
+										"y": -52
+									},
+									"spin": 0,
+									"time": 750
+								}
+							],
+							"name": "body"
+						},
+						{
+							"id": 1,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 0,
+										"file": 1,
+										"folder": 0,
+										"x": -25,
+										"y": 14
+									}
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 28.254249461679933,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.3,
+										"x": -22,
+										"y": 41
+									},
+									"spin": -1,
+									"time": 250
+								},
+								{
+									"id": 2,
+									"object": {
+										"angle": 335.6687580830649,
+										"file": 1,
+										"folder": 0,
+										"scale_x": 1.7988608423966232,
+										"scale_y": 0.9999999999999992,
+										"x": -23.999999999999993,
+										"y": -33.99999999999998
+									},
+									"time": 750
+								}
+							],
+							"name": "wing_left"
+						},
+						{
+							"id": 2,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 0,
+										"file": 2,
+										"folder": 0,
+										"x": 23,
+										"y": 14
+									},
+									"spin": -1
+								},
+								{
+									"id": 1,
+									"object": {
+										"angle": 336.6931682180562,
+										"file": 2,
+										"folder": 0,
+										"scale_x": 1.2999999999999998,
+										"scale_y": 0.9999999999999999,
+										"x": 21.400000000000006,
+										"y": 43.00000000000001
+									},
+									"time": 250
+								},
+								{
+									"id": 2,
+									"object": {
+										"angle": 24.52892967289904,
+										"file": 2,
+										"folder": 0,
+										"scale_x": 1.7030089519494882,
+										"scale_y": 1.0000000000000007,
+										"x": 20.46666666666667,
+										"y": -37.333333333333314
+									},
+									"spin": -1,
+									"time": 750
 								}
 							],
 							"name": "wing_right"

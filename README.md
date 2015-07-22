@@ -22,6 +22,8 @@ a single file script to load [Spriter](http://www.brashmonkey.com) animations to
     local sprite = spriter_object:createEntitySprite("bat")
     sprite.texture_pack = texture_pack
  
+    sprite:play("idle")
+ 
     stage:addChild(sprite)
 
 ## Notes
