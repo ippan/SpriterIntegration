@@ -7,6 +7,7 @@ a single file script to load [Spriter](http://www.brashmonkey.com) animations to
 * load Spriter texture pack
 * load Spriter scon file
 * play object animation
+* play bone animation
 
 ## Install
 

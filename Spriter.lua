@@ -209,10 +209,31 @@ function Spriter.EntitySprite:applyAnimation()
 	
 	local mainline_key = animation:getMainlineKeyFromTime(self.time)
 	
+	local bone_keys = {}
+	
+	for i, reference in ipairs(mainline_key.bone_references) do
+		
+		local current_key = animation:getKeyFromReference(reference, self.time)
+		
+		if reference.parent > 0 and bone_keys[reference.parent] then
+			current_key.spatial = current_key.spatial:combineParent(bone_keys[reference.parent].spatial)	
+		end
+		
+		current_key.parent = reference.parent
+		
+		bone_keys[i] = current_key
+	end	
+	
 	local object_keys = {}
 	
 	for i, reference in ipairs(mainline_key.object_references) do
 		local current_key = animation:getKeyFromReference(reference, self.time)
+		
+		if reference.parent > 0 and bone_keys[reference.parent] then
+			current_key.spatial = current_key.spatial:combineParent(bone_keys[reference.parent].spatial)	
+		end
+		
+		current_key.parent = reference.parent	
 		
 		object_keys[i] = current_key	
 	end
@@ -301,12 +322,12 @@ function Spriter.Animation:getKeyFromReference(reference, time)
 	
 	local key_a = timeline.keys[reference.key]
 	
-	if key_length == 1 then return key_a.clone() end
+	if key_length == 1 then return key_a:clone() end
 	
 	local next_key_index = reference.key + 1
 	
 	if next_key_index > key_length then 
-		if self.looping then next_key_index = 1 else return key_a.clone()  end
+		if self.looping then next_key_index = 1 else return key_a:clone()  end
 	end
 	
 	local key_b = timeline.keys[next_key_index]
@@ -319,12 +340,10 @@ end
 
 Spriter.MainlineKey = Core.class()
 
-function Spriter.MainlineKey:init(mainline_key_data)
-	self.time = mainline_key_data.time or 0
-	-- no need to load bone reference here, only support object now
-	local object_references = {}
-	for i, reference in ipairs(mainline_key_data.object_ref) do
-		object_references[reference.id + 1] =
+function Spriter.MainlineKey:load_references(references_data)
+	local references = {}
+	for i, reference in ipairs(references_data) do
+		references[reference.id + 1] =
 		{
 			-- lua array start form 1, so add 1 to all index
 			parent = reference.parent ~= nil and reference.parent + 1 or 0,
@@ -333,7 +352,13 @@ function Spriter.MainlineKey:init(mainline_key_data)
 			z_index = reference.z_index
 		}
 	end	
-	self.object_references = object_references
+	return references
+end
+
+function Spriter.MainlineKey:init(mainline_key_data)
+	self.time = mainline_key_data.time or 0
+	self.bone_references = self:load_references(mainline_key_data.bone_ref)
+	self.object_references = self:load_references(mainline_key_data.object_ref)
 end
 
 Spriter.Timeline = Core.class()
@@ -346,7 +371,7 @@ function Spriter.Timeline:init(timeline_data)
 	
 	for i, key in ipairs(timeline_data.key) do
 		-- support sprite timeline key only
-		keys[key.id + 1] = Spriter.SpriteTimelineKey.new(key)
+		keys[key.id + 1] = Spriter.TimelineKey.classes[self.type].new(key)
 	end
 	
 	self.keys = keys
@@ -425,6 +450,33 @@ function Spriter.Spatial:clone()
 	return spatial
 end
 
+function Spriter.Spatial:combineParent(parent)
+	local spatial = Spriter.Spatial.new()
+	self:copyTo(spatial)
+	
+	spatial.angle = spatial.angle + parent.angle
+	spatial.scale.x = spatial.scale.x * parent.scale.x
+	spatial.scale.y = spatial.scale.y * parent.scale.y
+	spatial.a = spatial.a * parent.a
+	
+	if x ~= 0 or y ~= 0 then
+		local pre_x = spatial.position.x * parent.scale.x
+		local pre_y = spatial.position.y * parent.scale.y
+		local radians = parent.angle * math.pi / 180
+		local s = math.sin(radians)
+		local c = math.cos(radians)
+		
+		spatial.position.x = (pre_x * c) - (pre_y * s) + parent.position.x
+		spatial.position.y = (pre_x * s) + (pre_y * c) + parent.position.y
+			
+	else
+		spatial.position.x = parent.position.x
+		spatial.position.y = parent.position.y
+	end
+	
+	return spatial
+end
+
 Spriter.SpatialTimelineKey = Core.class(Spriter.TimelineKey)
 
 function Spriter.SpatialTimelineKey:init(timeline_key_data)
@@ -460,7 +512,6 @@ function Spriter.SpriteTimelineKey:copyTo(timeline_key)
 	timeline_key.file = self.file
 	timeline_key.use_default_pivot = self.use_default_pivot
 	timeline_key.pivot = Spriter.Vector.new(self.pivot.x, self.pivot.y)
-	
 end
 
 function Spriter.SpriteTimelineKey:create()
@@ -481,3 +532,22 @@ function Spriter.SpriteTimelineKey:linear(key_b, t)
 	
 	return key
 end
+
+Spriter.BoneTimelineKey = Core.class(Spriter.SpatialTimelineKey)
+
+function Spriter.BoneTimelineKey:create()
+	return Spriter.BoneTimelineKey.new()
+end
+
+function Spriter.BoneTimelineKey:linear(key_b, t)
+	local key = self:clone()	
+	key.spatial = spatialLinear(self.spatial, key_b.spatial, self.spin, t)	
+	return key
+end
+
+
+Spriter.TimelineKey.classes = 
+{
+	sprite = Spriter.SpriteTimelineKey,
+	bone = Spriter.BoneTimelineKey
+}

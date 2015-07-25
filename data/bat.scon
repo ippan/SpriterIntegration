@@ -1,4 +1,9 @@
 {
+	"atlas": [
+		{
+			"name": "bat.json"
+		}
+	],
 	"entity": [
 		{
 			"animation": [
@@ -256,8 +261,8 @@
 										"angle": 0,
 										"file": 0,
 										"folder": 0,
-										"x": 2.0000000000000036,
-										"y": 30.999999999999996
+										"x": 2,
+										"y": 31
 									},
 									"spin": 0,
 									"time": 250
@@ -268,7 +273,7 @@
 										"angle": 0,
 										"file": 0,
 										"folder": 0,
-										"x": 0.3333333333333339,
+										"x": 0.333333333333334,
 										"y": -52
 									},
 									"spin": 0,
@@ -293,7 +298,7 @@
 								{
 									"id": 1,
 									"object": {
-										"angle": 28.254249461679933,
+										"angle": 28.254249461679876,
 										"file": 1,
 										"folder": 0,
 										"scale_x": 1.3,
@@ -306,13 +311,13 @@
 								{
 									"id": 2,
 									"object": {
-										"angle": 335.6687580830649,
+										"angle": 335.668758083065,
 										"file": 1,
 										"folder": 0,
-										"scale_x": 1.7988608423966232,
-										"scale_y": 0.9999999999999992,
-										"x": -23.999999999999993,
-										"y": -33.99999999999998
+										"scale_x": 1.79886084239662,
+										"scale_y": 0.999999999999999,
+										"x": -24,
+										"y": -34
 									},
 									"time": 750
 								}
@@ -336,26 +341,24 @@
 								{
 									"id": 1,
 									"object": {
-										"angle": 336.6931682180562,
+										"angle": 336.693168218056,
 										"file": 2,
 										"folder": 0,
-										"scale_x": 1.2999999999999998,
-										"scale_y": 0.9999999999999999,
-										"x": 21.400000000000006,
-										"y": 43.00000000000001
+										"scale_x": 1.3,
+										"x": 21.4,
+										"y": 43
 									},
 									"time": 250
 								},
 								{
 									"id": 2,
 									"object": {
-										"angle": 24.52892967289904,
+										"angle": 24.528929672898983,
 										"file": 2,
 										"folder": 0,
-										"scale_x": 1.7030089519494882,
-										"scale_y": 1.0000000000000007,
-										"x": 20.46666666666667,
-										"y": -37.333333333333314
+										"scale_x": 1.70300895194949,
+										"x": 20.4666666666667,
+										"y": -37.3333333333333
 									},
 									"spin": -1,
 									"time": 750
@@ -370,6 +373,266 @@
 			"id": 0,
 			"name": "bat",
 			"obj_info": []
+		},
+		{
+			"animation": [
+				{
+					"gline": [],
+					"id": 0,
+					"interval": 100,
+					"length": 1000,
+					"mainline": {
+						"key": [
+							{
+								"bone_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"timeline": 1
+									},
+									{
+										"id": 1,
+										"key": 0,
+										"parent": 0,
+										"timeline": 2
+									},
+									{
+										"id": 2,
+										"key": 0,
+										"parent": 0,
+										"timeline": 3
+									}
+								],
+								"id": 0,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"parent": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 0,
+										"parent": 1,
+										"timeline": "4",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 0,
+										"parent": 2,
+										"timeline": "5",
+										"z_index": "2"
+									}
+								]
+							},
+							{
+								"bone_ref": [
+									{
+										"id": 0,
+										"key": 1,
+										"timeline": 1
+									},
+									{
+										"id": 1,
+										"key": 1,
+										"parent": 0,
+										"timeline": 2
+									},
+									{
+										"id": 2,
+										"key": 1,
+										"parent": 0,
+										"timeline": 3
+									}
+								],
+								"id": 1,
+								"object_ref": [
+									{
+										"id": 0,
+										"key": 0,
+										"parent": 0,
+										"timeline": "0",
+										"z_index": "0"
+									},
+									{
+										"id": 1,
+										"key": 0,
+										"parent": 1,
+										"timeline": "4",
+										"z_index": "1"
+									},
+									{
+										"id": 2,
+										"key": 0,
+										"parent": 2,
+										"timeline": "5",
+										"z_index": "2"
+									}
+								],
+								"time": 500
+							}
+						]
+					},
+					"name": "idle",
+					"timeline": [
+						{
+							"id": 0,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 270,
+										"file": 0,
+										"folder": 1,
+										"x": 11,
+										"y": -2.69422295812418e-15
+									},
+									"spin": 0
+								}
+							],
+							"name": "body"
+						},
+						{
+							"id": 1,
+							"key": [
+								{
+									"bone": {
+										"angle": 90,
+										"y": -1
+									},
+									"id": 0,
+									"spin": 0
+								},
+								{
+									"bone": {
+										"angle": 90,
+										"x": 0.7722007722007721,
+										"y": -20.305019305019307
+									},
+									"id": 1,
+									"spin": 0,
+									"time": 500
+								}
+							],
+							"name": "bone_000",
+							"obj": 0,
+							"object_type": "bone"
+						},
+						{
+							"id": 2,
+							"key": [
+								{
+									"bone": {
+										"angle": 50,
+										"x": 11,
+										"y": 30
+									},
+									"id": 0,
+									"spin": -1
+								},
+								{
+									"bone": {
+										"angle": 34.22961478426453,
+										"x": 11.000000000000009,
+										"y": 30
+									},
+									"id": 1,
+									"time": 500
+								}
+							],
+							"name": "bone_001",
+							"obj": 1,
+							"object_type": "bone"
+						},
+						{
+							"id": 3,
+							"key": [
+								{
+									"bone": {
+										"angle": 310,
+										"x": 11,
+										"y": -30
+									},
+									"id": 0
+								},
+								{
+									"bone": {
+										"angle": 327.5720451369715,
+										"x": 10.999999999999993,
+										"y": -30
+									},
+									"id": 1,
+									"spin": -1,
+									"time": 500
+								}
+							],
+							"name": "bone_002",
+							"obj": 2,
+							"object_type": "bone"
+						},
+						{
+							"id": 4,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 190,
+										"file": 1,
+										"folder": 1,
+										"x": -3.8302222155949,
+										"y": -3.2139380484327
+									},
+									"spin": 0
+								}
+							],
+							"name": "wing_left"
+						},
+						{
+							"id": 5,
+							"key": [
+								{
+									"id": 0,
+									"object": {
+										"angle": 350,
+										"file": 2,
+										"folder": 1,
+										"x": -3.83022221559491,
+										"y": 3.21393804843267
+									},
+									"spin": 0
+								}
+							],
+							"name": "wing_right"
+						}
+					]
+				}
+			],
+			"character_map": [],
+			"id": 1,
+			"name": "bat_with_bone",
+			"obj_info": [
+				{
+					"h": 10,
+					"name": "bone_000",
+					"type": "bone",
+					"w": 28.3694586383306
+				},
+				{
+					"h": 10,
+					"name": "bone_001",
+					"type": "bone",
+					"w": 57.50972711653
+				},
+				{
+					"h": 10,
+					"name": "bone_002",
+					"type": "bone",
+					"w": 60.0326587645691
+				}
+			]
 		}
 	],
 	"folder": [
@@ -401,6 +664,37 @@
 				}
 			],
 			"id": 0,
+			"name": "bat"
+		},
+		{
+			"atlas": 0,
+			"file": [
+				{
+					"height": 102,
+					"id": 0,
+					"name": "bat/body.png",
+					"pivot_x": 0.5,
+					"pivot_y": 0.5,
+					"width": 180
+				},
+				{
+					"height": 102,
+					"id": 1,
+					"name": "bat/wing_left.png",
+					"pivot_x": 0.4,
+					"pivot_y": 0.4,
+					"width": 180
+				},
+				{
+					"height": 102,
+					"id": 2,
+					"name": "bat/wing_right.png",
+					"pivot_x": 0.6,
+					"pivot_y": 0.4,
+					"width": 180
+				}
+			],
+			"id": 1,
 			"name": "bat"
 		}
 	],
